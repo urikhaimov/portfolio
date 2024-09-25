@@ -1,0 +1,210 @@
+@import "@/theme/theme.less";
+
+@idx-0-main: #667292;
+@idx-0-body: #8d9db6;
+@idx-1-main: #e0876a;
+@idx-1-body: #f7cac9;
+@idx-2-main: #588c7e;
+@idx-2-body: #96ceb4;
+@idx-3-main: #b9b0b0;
+@idx-3-body: #e4d1d1;
+
+@hover-scale: scale(1.02);
+
+.subscription {
+  * {
+    color: #fff;
+  }
+
+  .discount {
+    display: none;
+  }
+
+  ul {
+    list-style: none;
+    padding: @margin;
+    margin: 0 0 @margin 0;
+
+    li {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .businesses {
+      margin-bottom: @margin;
+
+      span {
+        font-size: 16px;
+
+        &:last-child {
+          margin-left: 6px;
+          background-color: @main-bg-color;
+          padding: 5px 10px;
+          border-radius: 4px;
+          color: @main-text-color;
+        }
+      }
+    }
+  }
+
+  .price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 6px;
+    margin-bottom: @margin;
+
+    * {
+      color: @main-text-color;
+    }
+
+
+    span {
+      font-size: 18px;
+      font-weight: 500;
+
+      &:last-child {
+        margin-left: 4px;
+      }
+    }
+
+    .discounted {
+      span:first-child {
+        text-decoration: line-through;
+        text-decoration-color: red;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  :global {
+    .ant-btn {
+      span {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &:hover {
+    :global {
+      .ant-btn {
+        transform: @hover-scale;
+      }
+    }
+  }
+
+  &.card-0 {
+    background-color: @idx-0-main;
+
+    ul {
+      background-color: @idx-0-main;
+    }
+
+    :global {
+      .ant-card-body {
+        background-color: @idx-0-body;
+      }
+
+      .ant-btn-primary {
+        background-color: @idx-0-main !important;
+      }
+    }
+  }
+
+  &.card-1 {
+    background-color: @idx-1-main;
+
+    ul {
+      background-color: @idx-1-main;
+    }
+
+    :global {
+      .ant-card-body {
+        background-color: @idx-1-body;
+      }
+
+      .ant-btn-primary {
+        background-color: @idx-1-main !important;
+      }
+    }
+  }
+
+  &.card-2 {
+    background-color: @idx-2-main;
+
+    ul {
+      background-color: @idx-2-main;
+    }
+
+    :global {
+      .ant-card-body {
+        background-color: @idx-2-body;
+      }
+
+      .ant-btn-primary {
+        background-color: @idx-2-main !important;
+      }
+
+    }
+  }
+
+  &.card-3 {
+    background-color: @idx-3-main;
+
+    ul {
+      background-color: @idx-3-main;
+    }
+
+    :global {
+      .ant-card-body {
+        background-color: @idx-3-body;
+      }
+
+      .ant-btn-primary {
+        background-color: @idx-3-main !important;
+      }
+
+    }
+  }
+
+  &.discounted {
+    position: relative;
+
+    .discount {
+      display: flex;
+      position: absolute;
+      background-image: url("@/assets/images/discount.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100px;
+      height: 100px;
+      top: 38px;
+      right: -24px;
+      transition: @main-transition;
+    }
+
+    &:hover {
+      .discount {
+        transform: @hover-scale;
+      }
+    }
+  }
+
+  &.selected {
+    box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+  }
+
+  :global {
+    .ant-card-body {
+      padding: @margin 0;
+      text-align: center;
+    }
+
+    .ant-card-head-title {
+      font-size: 18px;
+      font-weight: 500;
+      padding: @margin_d2 0;
+    }
+  }
+}

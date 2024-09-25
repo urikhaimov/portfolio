@@ -1,0 +1,65 @@
+@import "@/theme/theme.less";
+
+.suW {
+  margin: @margin_m2;
+  padding: @margin_m2;
+  background-color: rgba(255, 255, 255, .6);
+  border-radius: 8px;
+  transition: @main-transition;
+
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    margin-bottom: @margin_m2;
+
+    span {
+      font-weight: inherit;
+      font-size: inherit;
+    }
+  }
+
+  .confirm {
+    border-top: 1px solid @ant-border-color;
+    margin-top: @margin_m2;
+    padding-top: @margin;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .formSection {
+    margin: @margin;
+    padding: @margin;
+    border-radius: 8px;
+    background-color: @main-bg-color;
+  }
+
+  @media @media-768 {
+    margin: @margin_d2;
+    padding: @margin;
+
+    h1 {
+      font-size: 18px;
+      line-height: 20px;
+      margin-bottom: @margin;
+    }
+
+    .formSection {
+      padding: @margin_d2;
+    }
+  }
+
+  :global {
+    .ant-tag {
+      padding: 6px 12px;
+    }
+
+    .ant-form-item-extra {
+      color: #333;
+    }
+
+    .ant-checkbox-wrapper {
+      column-gap: 6px;
+    }
+  }
+}

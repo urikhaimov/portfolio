@@ -1,0 +1,95 @@
+@import "@/theme/theme";
+
+.desktop {
+  :global {
+    .events {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .events .ant-badge-status {
+      width: 100%;
+      overflow: hidden;
+      font-size: 12px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .notes-month {
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .notes-month section {
+      font-size: 28px;
+    }
+  }
+}
+
+.eventWrapper {
+  :global {
+    .ec {
+      height: 700px;
+      max-width: calc(100vw - @margin * 2);
+    }
+
+    .ec-event-title,
+    time {
+      //word-break: break-word;
+      padding: @event-padding;
+      text-align: @text-align;
+    }
+
+    .ec-day-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ec-event-time {
+      //white-space: normal;
+      background: #ddd;
+      border-radius: 3px;
+      color: @main-text-color;
+    }
+
+    .ec-now-indicator {
+      @delta: 6px;
+
+      width: calc(100% - @delta);
+      left: @delta;
+      z-index: 800;
+
+      &::before {
+        left: calc(50% - @delta);
+      }
+    }
+
+    .ec-week-view {
+      .ec-event-title {
+        padding: 5px;
+        //overflow-x: hidden;
+        //overflow-y: auto;
+      }
+    }
+
+    .ec-timeline {
+      @line-width: 80px;
+
+      .ec-time,
+      .ec-line {
+        width: @line-width;
+      }
+
+      .ec-line:not(:first-child)::after {
+        margin-left: calc(-@line-width / 2);
+      }
+    }
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}

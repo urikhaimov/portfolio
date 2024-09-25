@@ -1,0 +1,51 @@
+@import "@/theme/mixin";
+
+.trigger {
+
+}
+
+.mapElement,
+.loadingElement {
+}
+
+.mapWrapper {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.modalMap {
+  :global {
+    .ant-modal-body {
+      height: @modal-height;
+
+      .ant-spin-spinning {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .ant-modal-content {
+      padding: 5px;
+      border-top-right-radius: 0;
+    }
+
+    .ant-modal-close {
+      background: #fff;
+      width: 40px;
+      height: 25px;
+      top: -22px;
+      right: 0;
+
+      &:hover {
+        background: #fff;
+      }
+
+      .ant-modal-close-x {
+        font-variant: all-small-caps;
+        font-size: 12px;
+      }
+    }
+  }
+}

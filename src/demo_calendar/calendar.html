@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@event-calendar/build@3.4.0/event-calendar.min.css">
+
+</head>
+<body>
+<div id="ec"></div>
+
+<dialog id="dialog">
+    <form id="form" method="dialog">
+        <h2>Make Reservation</h2>
+        <h3 id="room-name"></h3>
+        <h3 id="date"></h3>
+        <div class="row">
+            <label for="start">Start:</label>
+            <input type="time" id="start" name="start-time">
+        </div>
+        <div class="row">
+            <label for="end">End:</label>
+            <input type="time" id="end" name="end-time">
+        </div>
+        <div class="row">
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment"></textarea>
+        </div>
+        <menu>
+            <button id="cancel" type="reset">Cancel</button>
+            <button id="confirm" type="submit">Confirm</button>
+        </menu>
+    </form>
+</dialog>
+<script src="https://cdn.jsdelivr.net/npm/@event-calendar/build@2.3.0/event-calendar.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.9/dayjs.min.js"></script>
+<script src="./calendar.js"></script>
+</body>
+</html>

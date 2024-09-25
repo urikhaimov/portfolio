@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "allowSyntheticDefaultImports": false,
+        "baseUrl": "./",
+        "module": "commonjs",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@@/*": ["./src/.umi/*"],
+            "assets/*": ["./public/assets/*"],
+            "components/*": ["./src/components/*"],
+            "layouts/*": ["./src/layouts/*"],
+            "locales/*": ["./src/locales/*"],
+            "models/*": ["./src/models/*"],
+            "theme/*": ["./src/theme/*"],
+            "pages/*": ["./src/pages/*"],
+            "services/*": ["./src/services/*"],
+            "utils/*": ["./src/utils/*"]
+        }
+    },
+    "exclude": ["node_modules", "dist"]
+}

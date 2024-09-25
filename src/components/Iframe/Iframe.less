@@ -1,0 +1,21 @@
+.iframe {
+  border: none;
+}
+
+.iframeLoader {
+  position: relative;
+
+  .iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  :global {
+    .ant-spin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

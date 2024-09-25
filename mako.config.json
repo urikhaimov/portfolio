@@ -1,0 +1,17 @@
+{
+    "optimization": {
+        "skipModules": false,
+        "concatenateModules": false
+    },
+    "codeSplitting": {
+        "strategy": "granular",
+        "options": {
+            "frameworkPackages": ["react", "antd"],
+            "libMinSize": 160000
+        }
+    },
+    "alias": [
+        ["@", "./src"],
+        ["@@", "./src/.umi"]
+    ]
+}

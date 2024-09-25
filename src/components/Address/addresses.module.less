@@ -1,0 +1,54 @@
+@import "@/theme/theme.less";
+
+.form {
+  padding: 0;
+  row-gap: @margin;
+  display: flex;
+  flex-direction: column;
+
+  :global {
+    .ant-divider {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.formHelper {
+  cursor: pointer;
+  position: absolute;
+  right: @margin;
+  top: @margin;
+  z-index: 1;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.question {
+  display: flex;
+  column-gap: 8px;
+}
+
+.country {
+  background-color: rgba(0, 0, 0, .02);
+  border-radius: 8px;
+  padding-top: @margin;
+  padding-bottom: @margin_d2;
+  border: 1px solid @ant-border-color;
+
+  > div {
+    margin: 0 @margin_d2;
+  }
+}
+
+.addressName {
+  width: 50%;
+
+  @media @media-768 {
+    width: 100%;
+  }
+}

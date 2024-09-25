@@ -1,0 +1,43 @@
+@import "@/theme/theme.less";
+
+.separator {
+  position: relative;
+
+  .skewed {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transform: skewY(4deg);
+    transform-origin: top right;
+  }
+
+  .semicircle {
+    position: relative;
+    height: 50vh;
+
+    &::before {
+      position: absolute;
+      content: '';
+      left: 50%;
+      z-index: 10;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: inherit;
+      transform: translateX(-50%) translateY(50%);
+      bottom: 0;
+    }
+  }
+
+  .curved {
+    position: relative;
+    height: 50vh;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+  }
+}
