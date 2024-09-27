@@ -44,7 +44,9 @@ export async function defineAbilityFor({ user }) {
 
   can(['access'], 'login');
 
-  can(['read'], 'home');
+  can(['read'], 'about');
+  can(['read'], 'experience');
+  can(['read'], 'patents');
   can(['read'], 'subscriptions');
   can(['read'], 'features');
 

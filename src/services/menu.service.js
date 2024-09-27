@@ -4,33 +4,21 @@
  */
 export const menus = [
   {
-    key: `features`,
-    locale: 'menu.features',
-    url: `#features`,
-    subject: `features`
+    key: `about`,
+    locale: 'menu.about',
+    url: `/about`,
+    subject: `about`
   },
   {
-    key: `testimonials`,
-    locale: 'menu.testimonials',
-    url: `#testimonials`,
-    subject: `testimonials`
+    key: `experience`,
+    locale: 'menu.experience',
+    url: `/experience`,
+    subject: `experience`
   },
   {
-    key: `highlights`,
-    locale: 'menu.highlights',
-    url: `#highlights`,
-    subject: `highlights`
-  },
-  {
-    key: `pricing`,
-    locale: 'menu.pricing',
-    url: `#pricing`,
-    subject: `pricing`
-  },
-  {
-    key: `faq`,
-    locale: 'menu.faq',
-    url: `#faq`,
-    subject: `faq`
+    key: `patents`,
+    locale: 'menu.patents',
+    url: `/patents`,
+    subject: `patents`
   }
 ];

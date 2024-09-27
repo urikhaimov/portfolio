@@ -10,10 +10,24 @@ const MAIN_ROUTES = (mainPath = '') => {
     path: `${mainPath}/`,
     component: '@/layouts/landing',
     routes: [
+      {       
+        path: `${mainPath}/`,
+        redirect: `${mainPath}/about`
+      },
       {
         exact: true,
-        path: `${mainPath}/`,
-        component: '@/pages/home'
+        path: `${mainPath}/about`,
+        component: '@/pages/home/about'
+      },
+      {
+        exact: true,
+        path: `${mainPath}/experience`,
+        component: '@/pages/home/experience'
+      },
+      {
+        exact: true,
+        path: `${mainPath}/patents`,
+        component: '@/pages/home/patents'
       },
       ...mainErrors
     ]

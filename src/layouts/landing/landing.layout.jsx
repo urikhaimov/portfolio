@@ -140,7 +140,8 @@ export const LandingLayout = (props) => {
         {layout?.footer && (
             <Footer className={styles.sLF}>
               <div className={styles.footer}>
-                footer
+                <div>Volodymyr Tkach</div>
+                <div>{new Date().getFullYear()}</div>
               </div>
             </Footer>
         )}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Layout } from 'antd';
-import { MenuOutlined, MoonFilled, SunFilled } from '@ant-design/icons';
+import { BranchesOutlined, SunFilled, MoonFilled, MenuOutlined, LinkedinOutlined, GithubOutlined } from '@ant-design/icons';
 import { useIntl, history } from '@umijs/max';
 import classnames from 'classnames';
 
@@ -14,8 +14,6 @@ import Loader from '@/components/Loader';
 
 import { HeaderActions } from './header.actions';
 
-import barberLogo from '@/assets/images/barber-logo.png';
-
 import styles from './landing.layout.module.less';
 
 const { Header } = Layout;
@@ -26,89 +24,74 @@ const { Header } = Layout;
  * @return {JSX.Element}
  * @constructor
  */
-export const LandingHeader = props => {
-  const intl = useIntl();
+export const LandingHeader = (props) => {
+    const intl = useIntl();
 
-  const {
-    testId,
-    user,
-    slogan,
-    ability,
-    theme,
-    loading,
-    isOnline,
-    notificationBadge,
-    mode = 'horizontal',
-    spinOn = [
-      'authModel/signIn',
-      'authModel/signOut'
-    ],
-    menus = [],
-    drawer = false,
-    onToggleTheme = stub,
-    onSignOut = stub,
-    onCloseMenu = stub,
-    onOpenMenu = stub
-  } = props;
+    const {
+        testId,
+        user,
+        slogan,
+        ability,
+        theme,
+        loading,
+        isOnline,
+        notificationBadge,
+        mode = 'horizontal',
+        spinOn = ['authModel/signIn', 'authModel/signOut'],
+        menus = [],
+        drawer = false,
+        onToggleTheme = stub,
+        onSignOut = stub,
+        onCloseMenu = stub,
+        onOpenMenu = stub
+    } = props;
 
-  const [openLogin, setOpenLogin] = useState(false);
+    const [openLogin, setOpenLogin] = useState(false);
 
-  const _menus = [...menus];
+    const _menus = [...menus];
 
-  const spinning = isSpinning(loading, spinOn);
+    const spinning = isSpinning(loading, spinOn);
 
-  return (
-      <Header className={classnames({
-        [styles.drawerWrapper]: mode === 'vertical',
-        [styles.headerWrapper]: mode === 'horizontal'
-      })}>
-        <div className={styles.layoutHeader}>
-          <div className={styles.headerMenu}>
-            {mode === 'horizontal' && (
-                <img onClick={() => history.push('/')}
-                     src={barberLogo} alt={'logo'}
-                     className={styles.logo}/>
-            )}
-            {_menus.map(({ key, locale, url, subject, icon }, idx) => (
-                <Button key={key} type={'text'} icon={icon}
-                        disabled={ability?.cannot('read', subject)}
-                        onClick={() => history.push(url)}>
-                  {t(intl, locale)}
-                </Button>
-            ))}
-            <div className={styles.slogan}>{slogan}</div>
-          </div>
-          <div className={styles.headerActions}>
-            <div className={styles.toHide}>
-              {mode === 'horizontal' && (
-                  <Button type={'text'}
-                          onClick={onToggleTheme}
-                          icon={theme === 'dark' ? <SunFilled/> : <MoonFilled/>}/>
-              )}
-              <Loader spinning={!!spinning}
-                      loading={loading}
-                      type={'container'}
-                      className={styles.loader}
-                      spinOn={spinOn}/>
-              <HeaderActions user={user}
-                             mode={mode}
-                             isOnline={isOnline}
-                             badge={notificationBadge}
-                             ability={ability}
-                             loading={loading}
-                             setOpenLogin={setOpenLogin}
-                             onSignOut={onSignOut}
-                             onCloseMenu={onCloseMenu}/>
+    return (
+        <Header
+            className={classnames({
+                [styles.drawerWrapper]: mode === 'vertical',
+                [styles.headerWrapper]: mode === 'horizontal'
+            })}
+        >
+            <div className={styles.layoutHeader}>
+                <div className={styles.headerMenu}>
+                    <div className={styles.logo} onClick={() => history.push('/')}>
+                        <BranchesOutlined />
+                    </div>
+                    {_menus.map(({ key, locale, url, subject, icon }, idx) => {
+                        const isActive = history.location.pathname === url;
+
+                        return (
+                            <Button
+                                key={key}
+                                type={'text'}
+                                icon={icon}
+                                className={classnames({ [styles.activeMenu]: isActive })}
+                                disabled={ability?.cannot('read', subject)}
+                                onClick={() => history.push(url)}
+                            >
+                                {t(intl, locale)}
+                            </Button>
+                        );
+                    })}
+                    <div className={styles.slogan}>{slogan}</div>
+                </div>
+                <div className={styles.headerActions}>
+                    <a href={'https://www.linkedin.com/in/teamco/'} target={'_blank'}>
+                        <LinkedinOutlined />
+                    </a>
+                    <a href={'https://github.com/teamco'} target={'_blank'}>
+                        <GithubOutlined />
+                    </a>
+                </div>
             </div>
-            {mode === 'horizontal' && (
-                <Button type={'text'}
-                        onClick={onOpenMenu}
-                        className={styles.menuButton}><MenuOutlined/></Button>
-            )}
-          </div>
-        </div>
-        <LandingLogin openLogin={openLogin}
-                      setOpenLogin={setOpenLogin}/>
-      </Header>
-  );
+            <LandingLogin openLogin={openLogin} setOpenLogin={setOpenLogin} />
+        </Header>
+    );
 };

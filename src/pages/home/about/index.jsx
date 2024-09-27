@@ -5,14 +5,14 @@ import Page from '@/components/Page';
 
 import avatar from '@/assets/images/avatar.png';
 
-import styles from './home.module.less';
+import styles from './about.module.less';
 
-export const Home = (props) => {
+const About = (props) => {
     const { appModel } = props;
 
     return (
-        <Page ableFor={{ subject: 'home' }}>
-            <div className={styles.homeWrapper}>
+        <Page ableFor={{ subject: 'about' }}>
+            <div className={styles.about}>
                 <Row gutter={[24, 24]}>                    
                     <Col span={6}>
                         <img src={avatar} alt={'Volodymyr Tkach'} />
@@ -23,8 +23,9 @@ export const Home = (props) => {
                                 I am a passionate and experienced front-end developer with a strong track record of
                                 successfully developing user-friendly and visually appealing web applications. I am
                                 proficient in HTML, CSS, and JavaScript, and I am also experienced with a variety of
-                                front-end frameworks and libraries, such as React (UmiJs + AntD), Angular, and Vue.js,
-                                test libraries such as Playwright, Jest, etc.
+                                front-end frameworks and libraries, such as <a href="https://reactjs.org/">React</a> (<a href="https://umijs.org/">UmiJs</a> + 
+                                <a href="https://ant.design/">AntD</a>), <a href="https://angular.io/">Angular</a>, and <a href="https://vuejs.org/">Vue.js</a>, 
+                                test libraries such as <a href="https://playwright.dev/">Playwright</a>, <a href="https://jestjs.io/">Jest</a>, etc.                         
                             </li>
                             <li>
                                 I am a highly motivated and results-oriented individual with a strong attention to
@@ -56,3 +57,6 @@ export const Home = (props) => {
         </Page>
     );
 };
+
+
+export default About;

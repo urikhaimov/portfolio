@@ -1,329 +1,355 @@
-@import "@/theme/theme.less";
+@import '@/theme/theme.less';
 
 * {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
 }
 
 body {
-  margin: 0;
-  overflow-x: hidden;
+    margin: 0;
+    overflow-x: hidden;
 
-  &.outline * {
-    outline: 1px solid #1890ff;
-    outline-offset: 1px;
-  }
+    &.outline * {
+        outline: 1px solid #1890ff;
+        outline-offset: 1px;
+    }
 }
 
 .landing {
-  .progress {
-    height: 2px;
-    background-color: lightcoral;
-    position: fixed;
-    z-index: 11;
-    top: 0;
-  }
-
-  .sL {
-    position: relative;
-    min-height: 100vh;
-
-    .headerWrapper {
-      position: sticky;
-      padding: 0;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: @menu-height;
-      z-index: 11;
-
-      .main-bg-color();
-
-      .layoutHeader {
-        padding: 0 @margin_m2;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .max-width();
-
-        @media @media-570 {
-          padding: 0 @margin;
-        }
-
-        height: @header-height;
-
-        .headerMenu {
-          display: flex;
-          align-items: center;
-          background-color: transparent;
-          height: @menu-height;
-          max-height: @menu-height;
-          transition: display 0.3s ease-in-out;
-
-          .logo {
-            cursor: pointer;
-            width: 48px;
-            height: 48px;
-            margin-right: @margin;
-            fill: @main-text-color;
-            transition: transform 0.3s ease-in-out;
-
-            &:hover {
-              transform: scale(1.05);
-            }
-          }
-
-          button {
-            transition: background-color 0.3s ease-in-out;
-
-            span {
-              color: @main-text-color;
-            }
-          }
-
-          .slogan {
-            display: none;
-            color: @main-text-color;
-          }
-
-          @media @media-570 {
-            button {
-              display: none;
-            }
-
-            .slogan {
-              display: flex;
-              font-size: 16px;
-              margin-left: @margin_d2;
-            }
-          }
-
-          @media @media-350 {
-            .slogan {
-              display: none;
-            }
-          }
-
-          :global {
-            .ant-btn-text:not(:disabled):not(.ant-btn-disabled):hover {
-              .background-white(.2)
-            }
-          }
-        }
-      }
-
-      .headerActions {
-        display: flex;
-        align-items: center;
-        height: @menu-height;
-
-        svg {
-          width: @margin;
-          height: @margin;
-          fill: @main-text-color;
-        }
-
-        .toHide {
-          display: flex;
-          column-gap: 16px;
-          align-items: center;
-
-          img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-          }
-
-          :global {
-            .ant-dropdown-trigger {
-              display: flex;
-              align-items: center;
-              column-gap: @margin_d2;
-              cursor: pointer;
-
-              span {
-                line-height: 20px;
-              }
-            }
-          }
-        }
-
-        .menuButton {
-          display: none;
-
-          svg {
-            width: 16px;
-            height: 16px;
-          }
-        }
-
-        @media @media-768 {
-          .toHide {
-            display: none;
-          }
-
-          .menuButton {
-            display: flex;
-          }
-        }
-      }
+    .progress {
+        height: 2px;
+        background-color: lightcoral;
+        position: fixed;
+        z-index: 11;
+        top: 0;
     }
 
-    .sLC {
-      overflow: hidden;
-
-      .main-bg-color();
-
-      .sLCW {
-        .max-width();
-
+    .sL {
+        position: relative;
         min-height: 100vh;
 
-        &.sLCWH {
-          min-height: calc(100vh - @menu-height);
+        .headerWrapper {
+            position: sticky;
+            padding: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: @menu-height;
+            z-index: 11;
+
+            .main-bg-color();
+
+            .layoutHeader {
+                padding: 0 @margin_m2;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .max-width();
+
+                @media @media-570 {
+                    padding: 0 @margin;
+                }
+
+                height: @header-height;
+
+                .headerMenu {
+                    display: flex;
+                    column-gap: 4px;
+                    align-items: center;
+                    background-color: transparent;
+                    height: @menu-height;
+                    max-height: @menu-height;
+                    transition: display 0.3s ease-in-out;
+
+                    .logo {
+                        display: flex;
+                        cursor: pointer;
+                        margin-right: @margin;
+                        fill: @main-text-color;
+
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                            margin-right: @margin_d2;
+                            color: #fff;
+                        }
+
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 4px;
+                            line-height: normal;
+                            font-size: 16px;
+                            font-weight: 600;
+
+                            span {
+                                font-weight: 500;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+
+                    button {
+                        transition: all 0.3s ease-in-out;                        
+
+                        span {
+                            color: @main-text-color;
+                            font-size: 16px;
+                        }
+                    }
+
+                    .slogan {
+                        display: none;
+                        color: @main-text-color;
+                    }
+
+                    .activeMenu {
+                        background-color: rgba(255, 255, 255, 0.2);
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+
+                    @media @media-570 {
+                        button {
+                            display: none;
+                        }
+
+                        .slogan {
+                            display: flex;
+                            font-size: 16px;
+                            margin-left: @margin_d2;
+                        }
+                    }
+
+                    @media @media-350 {
+                        .slogan {
+                            display: none;
+                        }
+                    }
+
+                    :global {
+                        .ant-btn-text:not(:disabled):not(.ant-btn-disabled):hover {
+                            .background-white(0.2);
+                        }
+                    }
+                }
+            }
+
+            .headerActions {
+                display: flex;
+                align-items: center;
+                height: @menu-height;
+                column-gap: 8px;
+
+                svg {
+                    width: @margin;
+                    height: @margin;
+                    fill: @main-text-color;
+                }
+
+                .toHide {
+                    display: flex;
+                    column-gap: 16px;
+                    align-items: center;
+
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                    }
+
+                    :global {
+                        .ant-dropdown-trigger {
+                            display: flex;
+                            align-items: center;
+                            column-gap: @margin_d2;
+                            cursor: pointer;
+
+                            span {
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }
+
+                .menuButton {
+                    display: none;
+
+                    svg {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+
+                @media @media-768 {
+                    .toHide {
+                        display: none;
+                    }
+
+                    .menuButton {
+                        display: flex;
+                    }
+                }
+            }
         }
 
-        &.sLCWF {
-          min-height: calc(100vh - @footer-height);
+        .sLC {
+            overflow: hidden;
+
+            .main-bg-color();
+
+            .sLCW {
+                .max-width();
+
+                min-height: 100vh;
+
+                &.sLCWH {
+                    min-height: calc(100vh - @menu-height);
+                }
+
+                &.sLCWF {
+                    min-height: calc(100vh - @footer-height);
+                }
+
+                &.sLCWHF {
+                    min-height: calc(100vh - @menu-height - @footer-height);
+                }
+            }
+
+            :global {
+                .ant-back-top {
+                    right: 50px;
+                }
+            }
         }
 
-        &.sLCWHF {
-          min-height: calc(100vh - @menu-height - @footer-height);
-        }
-      }
+        .sLF {
+            height: @footer-height;
 
-      :global {
-        .ant-back-top {
-          right: 50px;
+            .main-bg-color();
+
+            .footer {
+                .max-width();
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
         }
-      }
     }
-
-    .sLF {
-      height: @footer-height;
-
-      .main-bg-color();
-
-      .footer {
-        .max-width();
-
-        display: flex;
-        align-items: center;
-      }
-    }
-  }
 }
 
 .drawerWrapper {
-  background-color: transparent;
-  padding: 0 @margin_d2;
-  height: 100%;
-
-  .layoutHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-color: transparent;
+    padding: 0 @margin_d2;
     height: 100%;
-  }
 
-  .headerMenu {
-    display: flex;
-    flex-direction: column;
-    row-gap: @margin;
-
-    button {
-      height: auto;
-
-      span {
-        font-size: @margin;
-      }
+    .layoutHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
     }
-  }
 
-  .slogan {
-    display: none;
-  }
+    .headerMenu {
+        display: flex;
+        flex-direction: column;
+        row-gap: @margin;
+
+        button {
+            height: auto;
+
+            span {
+                font-size: @margin;
+            }
+        }
+    }
+
+    .slogan {
+        display: none;
+    }
 }
 
 .drawerMenu {
-  :global {
-    .ant-drawer-header {
-      padding: 16px;
-    }
+    :global {
+        .ant-drawer-header {
+            padding: 16px;
+        }
 
-    .ant-drawer-header-title {
-      flex-direction: row-reverse;
-    }
+        .ant-drawer-header-title {
+            flex-direction: row-reverse;
+        }
 
-    .ant-drawer-title {
-      font-weight: 500;
-      font-size: 18px;
+        .ant-drawer-title {
+            font-weight: 500;
+            font-size: 18px;
+        }
     }
-  }
 }
 
 .userActions {
-  display: flex;
-  column-gap: @margin;
-  align-items: center;
+    display: flex;
+    column-gap: @margin;
+    align-items: center;
 
-  .notifications {
-    cursor: pointer;
-  }
-
-  .wifi {
-    svg {
-      fill: @main-danger-color !important;
+    .notifications {
+        cursor: pointer;
     }
 
-    &.connected {
-      svg {
-        fill: @main-success-color !important;
-      }
-    }
-  }
+    .wifi {
+        svg {
+            fill: @main-danger-color !important;
+        }
 
-  :global {
-    .ant-btn-dangerous {
-      span {
-        color: #fff;
-      }
+        &.connected {
+            svg {
+                fill: @main-success-color !important;
+            }
+        }
     }
-  }
+
+    :global {
+        .ant-btn-dangerous {
+            span {
+                color: #fff;
+            }
+        }
+    }
 }
 
 .drawerActions {
-  display: flex;
-  row-gap: @margin;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-
-  button {
+    display: flex;
+    row-gap: @margin;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-  }
+
+    button {
+        width: 100%;
+    }
 }
 
 .loader {
-  width: auto !important;
+    width: auto !important;
 
-  :global {
-    .ant-spin-dot {
-      margin-top: -8.75px !important;
+    :global {
+        .ant-spin-dot {
+            margin-top: -8.75px !important;
+        }
     }
-  }
 }
 
 .actionsMenu {
-  a {
-    display: inline-block;
-    width: 100%;
-  }
+    a {
+        display: inline-block;
+        width: 100%;
+    }
 }
 
 .page404,
 .page403,
 .page500 {
-  width: 100%;
+    width: 100%;
 }
