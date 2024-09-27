@@ -1,4 +1,5 @@
 {
+  "homepage": "https://teamco.github.io/portfolio/",
   "private": true,
   "name": "portfolio",
   "version": "0.0.1",
@@ -34,7 +35,8 @@
     "build": "max build",
     "build:docs": "node_modules/.bin/jsdoc -c jsdoc-conf.json",
     "mdocs:services": "jsdoc2md ./src/services/*.js > ./src/services/index.md",
-    "deploy": "yarn run build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist",
     "postdeploy": "now",
     "precommit": "lint-staged",
     "js2flowchart": "js2flowchart ./src/layouts/landing/landing.layout.jsx",
