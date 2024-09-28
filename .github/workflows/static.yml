@@ -38,8 +38,10 @@ jobs:
           cache: "npm"
       - name: Install Yarn  
         run: npm i -g yarn
+      - name: Set Envs
+        run: export YARN_ENABLE_IMMUTABLE_INSTALLS=false
       - name: Install dependencies
-        run: yarn install
+        run: yarn install        
       - name: Build
         run: yarn run build
       - name: Setup Pages
