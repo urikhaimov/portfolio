@@ -39,7 +39,7 @@ jobs:
       - name: Install Yarn  
         run: npm i -g yarn
       - name: Set Envs
-        run: export YARN_ENABLE_IMMUTABLE_INSTALLS=false
+        run: yarn config set -H enableImmutableInstalls false
       - name: Install dependencies
         run: yarn install        
       - name: Build
