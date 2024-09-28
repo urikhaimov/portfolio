@@ -48,14 +48,14 @@ const __config__ = {
     // https://makojs.dev/getting-started
     // mako: {},
     base: '/',
-    // publicPath: '/main/',
+    publicPath: '/portfolio/',
     request: {
         dataField: 'data'
     },
     manifest: {},
     initialState: {},
     favicons: [
-        '/assets/favicon.png'
+        '/portfolio/assets/favicon.png'
         // '/assets/favicon-16x16.png',
         // '/assets/favicon-32x32.png'
     ],
