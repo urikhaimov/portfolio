@@ -14,6 +14,10 @@ const MAIN_ROUTES = (mainPath = '') => {
         path: `${mainPath}/`,
         redirect: `${mainPath}/about`
       },
+      {       
+        path: `${mainPath}/portfolio`,
+        redirect: `${mainPath}/about`
+      },
       {
         exact: true,
         path: `${mainPath}/about`,
