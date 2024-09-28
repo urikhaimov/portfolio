@@ -11,26 +11,22 @@ const MAIN_ROUTES = (mainPath = '') => {
     component: '@/layouts/landing',
     routes: [
       {       
-        path: `${mainPath}/`,
-        redirect: `${mainPath}/about`
-      },
-      {       
         path: `${mainPath}/portfolio`,
-        redirect: `${mainPath}/about`
+        redirect: `${mainPath}/portfolio/about`
       },
       {
         exact: true,
-        path: `${mainPath}/about`,
+        path: `${mainPath}/portfolio/about`,
         component: '@/pages/home/about'
       },
       {
         exact: true,
-        path: `${mainPath}/experience`,
+        path: `${mainPath}/portfolio/experience`,
         component: '@/pages/home/experience'
       },
       {
         exact: true,
-        path: `${mainPath}/patents`,
+        path: `${mainPath}/portfolio/patents`,
         component: '@/pages/home/patents'
       },
       ...mainErrors
