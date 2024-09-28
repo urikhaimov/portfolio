@@ -36,7 +36,7 @@
     "build:docs": "node_modules/.bin/jsdoc -c jsdoc-conf.json",
     "mdocs:services": "jsdoc2md ./src/services/*.js > ./src/services/index.md",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d ./dist",
     "postdeploy": "now",
     "precommit": "lint-staged",
     "js2flowchart": "js2flowchart ./src/layouts/landing/landing.layout.jsx",
