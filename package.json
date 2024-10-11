@@ -54,12 +54,12 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/teamco/portfolio/issues",
-    "email": "teamco@gmail.com"
+    "url": "https://github.com/urikhaimov/portfolio/issues",
+    "email": "urikhaimov@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:teamco/portfolio.git"
+    "url": "git@github.com:urikhaimov/portfolio.git"
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.1",
