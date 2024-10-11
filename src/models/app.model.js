@@ -21,7 +21,7 @@ import request from '@/utils/request';
 import { updateScrollPosition } from '@/utils/dom';
 
 const appMeta = {
-  name: 'Volodymyr Tkach: Portfolio',
+  name: 'Uri Khaimov: Portfolio',
   charSet: 'utf-8'
 };
 

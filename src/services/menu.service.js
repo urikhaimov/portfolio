@@ -14,11 +14,6 @@ export const menus = [
     locale: 'menu.experience',
     url: `/portfolio/experience`,
     subject: `experience`
-  },
-  {
-    key: `patents`,
-    locale: 'menu.patents',
-    url: `/portfolio/patents`,
-    subject: `patents`
   }
+ 
 ];

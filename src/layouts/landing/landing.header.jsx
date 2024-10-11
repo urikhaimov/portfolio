@@ -83,10 +83,10 @@ export const LandingHeader = (props) => {
                     <div className={styles.slogan}>{slogan}</div>
                 </div>
                 <div className={styles.headerActions}>
-                    <a href={'https://www.linkedin.com/in/teamco/'} target={'_blank'}>
+                    <a href={'https://www.linkedin.com/in/urik-haimov-75287b6a/'} target={'_blank'}>
                         <LinkedinOutlined />
                     </a>
-                    <a href={'https://github.com/teamco'} target={'_blank'}>
+                    <a href={'https://github.com/Urikhaimov'} target={'_blank'}>
                         <GithubOutlined />
                     </a>
                 </div>

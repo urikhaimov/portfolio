@@ -15,7 +15,7 @@ export const Home = (props) => {
             <div className={styles.homeWrapper}>
                 <Row gutter={[24, 24]}>                    
                     <Col span={6}>
-                        <img src={avatar} alt={'Volodymyr Tkach'} />
+                        <img src={avatar} alt={'Uri Khaimov'} />
                     </Col>
                     <Col span={18}>
                         <ul>
@@ -23,17 +23,13 @@ export const Home = (props) => {
                                 I am a passionate and experienced front-end developer with a strong track record of
                                 successfully developing user-friendly and visually appealing web applications. I am
                                 proficient in HTML, CSS, and JavaScript, and I am also experienced with a variety of
-                                front-end frameworks and libraries, such as React (UmiJs + AntD), Angular, and Vue.js,
-                                test libraries such as Playwright, Jest, etc.
+                                front-end frameworks and libraries, such as React (UmiJs + AntD), Angular,
+                                test libraries such as Jest, etc.
                             </li>
                             <li>
                                 I am a highly motivated and results-oriented individual with a strong attention to
                                 detail. I am also a team player and always willing to learn new things. I have the
                                 skills and experience to be a valuable asset to your team.
-                            </li>
-                            <li>
-                                I am currently working as a front-end developer at Amdocs. In my current role at Amdocs,
-                                I was responsible for developing and maintaining complex projects.
                             </li>
                             <li>
                                 I am also a strong believer in continuous learning, and I am always looking for new ways

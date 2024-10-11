@@ -24,11 +24,7 @@ const MAIN_ROUTES = (mainPath = '') => {
         path: `${mainPath}/portfolio/experience`,
         component: '@/pages/home/experience'
       },
-      {
-        exact: true,
-        path: `${mainPath}/portfolio/patents`,
-        component: '@/pages/home/patents'
-      },
+     
       ...mainErrors
     ]
   };
